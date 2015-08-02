@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple CMS | <%= @page_title || "Admin" %></title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Simple CMS Admin</h1>
+    </div>
+    <div id="main">
+      <% if !flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+      <p id="copyright">&copy; parsclick.net / Kevin Skoglund</p>
+    </div>
+  </body>
+</html>

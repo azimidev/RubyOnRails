@@ -1,0 +1,48 @@
+<%
+text = "This is some long sample text. It includes line breaks\n and double-line breaks.\n\n It rambles on and on and on.\n\n Until we get to this last line."
+%>
+
+<h2>word_wrap</h2>
+<%= word_wrap(text, :line_width => 30) %>
+<hr />
+
+<h2>simple_format</h2>
+<%= simple_format(text) %>
+<hr />
+
+<h2>simple_format + word_wrap</h2>
+<%= simple_format(word_wrap(text, :line_width => 30)) %>
+<hr />
+
+<h2>truncate</h2>
+<%= truncate(text, :length => 40, :omission => "...") %>
+<hr />
+
+<h2>excerpt</h2>
+<%= excerpt(text, 'includes', :radius => 7, :omission => "...") %>
+<hr />
+
+<h2>highlight</h2>
+<%= highlight(text, 'sample text') %>
+<hr />
+<%= highlight(text, ['sample', 'rambles'],
+:highlighter => '<em>\1</em>') %>
+<hr />
+
+<h2>pluralize</h2>
+<%= "student".pluralize %><br />
+<%= "ox".pluralize %><br />
+<br />
+<%= pluralize(2, 'product') %><br />
+<br />
+<% [0, 1, 20].each do |n| %>
+  <%= pluralize(n, 'product') %><br />
+  <%= pluralize(n, 'octopus') %><br />
+  <%= pluralize(n, 'snipe', 'snope') %><br />
+<% end %>
+<hr />
+
+<h2>cycle</h2>
+<% 5.times do %>
+  <%= cycle('red', 'green', 'blue') %><br />
+<% end %>

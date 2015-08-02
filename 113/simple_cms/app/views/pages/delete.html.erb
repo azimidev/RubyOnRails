@@ -1,0 +1,19 @@
+<% @page_title = "Delete Page" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :subject_id => @subject.id}, :class => 'back-link') %>
+
+<div class="pages delete">
+  <h2>Delete Page</h2>
+
+  <%= form_for(:page, :url => {:action => 'destroy', :id => @page.id, :subject_id => @subject.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this page?</p>
+
+    <p class="reference-name"><%= @page.name %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Page") %>
+    </div>
+
+  <% end %>
+</div>

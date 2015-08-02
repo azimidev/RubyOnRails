@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple CMS<%= " | #{@page_title}" if @page_title %></title>
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Simple CMS</h1>
+    </div>
+    <div id="main">
+      <div id="navigation">
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="footer">
+      <p id="copyright">&copy; parsclick.net / Kevin Skoglund</p>
+    </div>
+  </body>
+</html>
