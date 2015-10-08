@@ -1,0 +1,2 @@
+ERROR: "bundle install" was called with arguments ["mysql2", "/Users/hasan_azimi0"]
+Usage: "bundle install [OPTIONS]"

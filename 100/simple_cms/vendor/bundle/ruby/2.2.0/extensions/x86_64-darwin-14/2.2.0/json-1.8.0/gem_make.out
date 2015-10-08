@@ -1,0 +1,22 @@
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20151005-2884-1vanr1l.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling generator.c
+In file included from generator.c:1:
+./../fbuffer/fbuffer.h:175:47: error: too few arguments provided to function-like macro invocation
+    VALUE result = rb_str_new(FBUFFER_PAIR(fb));
+                                              ^
+/usr/local/Cellar/ruby/2.2.3/include/ruby-2.2.0/ruby/intern.h:793:9: note: macro 'rb_str_new' defined here
+#define rb_str_new(str, len) __extension__ (    \
+        ^
+In file included from generator.c:1:
+./../fbuffer/fbuffer.h:175:11: warning: incompatible pointer to integer conversion initializing 'VALUE' (aka 'unsigned long') with an expression of type 'VALUE (const char *, long)' [-Wint-conversion]
+    VALUE result = rb_str_new(FBUFFER_PAIR(fb));
+          ^        ~~~~~~~~~~
+1 warning and 1 error generated.
+make: *** [generator.o] Error 1
+
+make failed, exit code 2
